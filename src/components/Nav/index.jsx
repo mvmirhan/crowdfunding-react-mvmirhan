@@ -5,6 +5,8 @@ function Nav() {
     return (
         <nav>
             <Link to="/">  Home  </Link>
+            <Link to="/createproject"> Create Project </Link>
+            <Link to="/login"> Login </Link>
         </nav>
     )
 }
