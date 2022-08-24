@@ -1,0 +1,13 @@
+#navbar {
+    align-items: center;
+    background-color: lightseagreen;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-top: 32px 0px 0px 0px;
+    width: 100%;
+    height: 50px;
+  }

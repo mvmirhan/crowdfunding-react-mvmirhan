@@ -20,11 +20,13 @@ function App() {
           <Route path="/createproject" element={<CreateProjectPage/>}></Route>
           <Route exact path="/" element={<HomePage/>}></Route>
           <Route path="/project/:id" element={<ProjectPage/>}></Route>
-
-
+          
         </Routes>
       </Router>
+
     </div>
+
+
   )
 }
 
