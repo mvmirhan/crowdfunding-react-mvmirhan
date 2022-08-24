@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import '../ProjectCard/ProjectCard.css'
 
 function ProjectPage() {
     const [projectData, setProjectData] = useState({ pledges: [] })
@@ -16,8 +17,10 @@ function ProjectPage() {
     },[])
 
     return (
-        <div>
+        <div className='one-project-card'>
+            <img src={projectData.image}/>
             <h2>{projectData.title}</h2>
+            <h3>{projectData.description}</h3>
             <h3>Created at: {projectData.date_created}</h3>
             <h3>{`Status: ${projectData.is_open}`}</h3>
             <h3>Pledges: </h3>

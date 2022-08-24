@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { allProjects } from '../data'
 import ProjectCard from '../ProjectCard/ProjectCard'
+import image from '../images/logo-musikantro.png'
+
 
 function HomePage() {
 
@@ -23,7 +25,9 @@ function HomePage() {
                 return <ProjectCard key={key} projectData={projectData} />;
             }
             )}
-        </div>)
+        </div>
+
+        )
 
 }
 

@@ -1,8 +1,27 @@
+
+body {
+  background-color: #FDFDFC;
+  display: block;
+}
+
 #project-list {
   display: grid;
   grid-template-columns: 30% 30% 30%;
-  column-gap: 20px;
+  column-gap: 30px;
   row-gap: 20px;
+  padding: 30px 30px;
 }
+
+#img {
+  width: 20%;
+  height: 10vh;
+  align-content: center;
+
+}
+
+
+
+
+
 
 

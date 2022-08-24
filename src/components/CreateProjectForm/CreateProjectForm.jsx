@@ -1,12 +1,40 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProjectForm() {
-    const [data, postData] = useState({
+    const [data, inputData] = useState({
         title: "",
         description: "",
         goal: "",
         image: ""        
     })
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        inputData((prevData) => ({
+            ...prevData,[id]: value,
+        }))
+    }
+
+    const postData = async () => {
+        const response = await
+            fetch(`${process.env.REACT_APP_API_URL}api-token-auth/`,{
+                method: "post",
+                headers: {"Content-type": "application/json",},
+                body: JSON.stringify(data),
+            })
+            return response.json()
+    }
+
+    const history = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        {postData().then((response) => {
+                window.localStorage.setItem("token", response.token)
+                history("/")
+            })}
+    }
 
     return (    
     <form>
@@ -15,6 +43,7 @@ function ProjectForm() {
         <input
             type='text'
             placeholder='Add a project name'
+            onChange={handleChange}
         />
     </div>
 
@@ -23,6 +52,7 @@ function ProjectForm() {
         <input
             type='text'
             placeholder='Add project description'
+            onChange={handleChange}
         />
     </div>
 
@@ -31,6 +61,7 @@ function ProjectForm() {
         <input
             type='text'
             placeholder='Add a goal'
+            onChange={handleChange}
         />
     </div>
 
@@ -38,12 +69,13 @@ function ProjectForm() {
         <label>Project Photo</label>
         <input
             type='text'
-            placeholder='Add image URL '
+            placeholder='Add an image URL '
+            onChange={handleChange}
         />
     </div>
 
 
-    <button type='submit'> Create New Project</button>
+    <button type='submit' onClick={handleSubmit}> Create New Project</button>
     </form>
     )
 }
