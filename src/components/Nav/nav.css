@@ -1,32 +1,18 @@
 #navbar {
-    float: none;
     align-items: center;
-    background-color: lightseagreen;
+    background-color: #1176ae;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
-    margin: 0;
+    justify-content:right;
     max-width: 100%;
-    overflow: hidden;
     width: 100%;
     height: 80px;
   }
   
-  /* #navbar {
-    float: none;
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: flex-end;
-    height: 80px;
-} */
-
 a {
-    margin: 5px;
+    margin: 10px;
     text-decoration: none;
-    color: #5c5c5c;
     font-weight: bold;
+    color: black
 }
 
 

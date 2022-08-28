@@ -16,7 +16,14 @@ function App() {
       <Router>
 
       <Nav />
-      <img id="img" src={image}/>
+        <div id='logo'>
+          <img src={image} alt='logo'/>
+          <p>
+          MUSIKANTRO is a creative art promotion platform with a vision to introduce up-coming musicians who are looking to break into music scene and help launch their music career.
+          The purpose of the platform is to offer a tool that will help provide exposure to musicians to grab attention and get more backers/supporters thru crowdfunding campaigns. 
+          </p>
+        </div>
+      
         <Routes>
           <Route path="/login" element={<LoginPage/>}></Route>
           <Route path="/createproject" element={<CreateProjectPage/>}></Route>

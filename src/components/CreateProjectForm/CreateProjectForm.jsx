@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import '../style/form-fields.css'
+
 function ProjectForm() {
     const [data, inputData] = useState({
         title: "",
         description: "",
         goal: "",
-        image: ""        
+        image: "",
+        is_open: "true",
+        date_created: ""       
     })
 
     const handleChange = (e) => {
@@ -18,7 +22,7 @@ function ProjectForm() {
 
     const postData = async () => {
         const response = await
-            fetch(`${process.env.REACT_APP_API_URL}api-token-auth/`,{
+            fetch(`${process.env.REACT_APP_API_URL}projects/`,{
                 method: "post",
                 headers: {"Content-type": "application/json",},
                 body: JSON.stringify(data),
@@ -37,10 +41,10 @@ function ProjectForm() {
     }
 
     return (    
-    <form>
+    <form className='form-style'>
     <div>
-        <label>Project Name</label>
-        <input
+        <label className='form-label'>Project Name: </label>
+        <input className='form-input'
             type='text'
             placeholder='Add a project name'
             onChange={handleChange}
@@ -48,8 +52,8 @@ function ProjectForm() {
     </div>
 
     <div>
-        <label>Project Description</label>
-        <input
+        <label className='form-label'>Project Description: </label>
+        <input id='form-inpur-desc'
             type='text'
             placeholder='Add project description'
             onChange={handleChange}
@@ -57,8 +61,8 @@ function ProjectForm() {
     </div>
 
     <div>
-        <label>Project Goal</label>
-        <input
+        <label className='form-label'>Project Goal: </label>
+        <input className='form-input'
             type='text'
             placeholder='Add a goal'
             onChange={handleChange}
@@ -66,16 +70,15 @@ function ProjectForm() {
     </div>
 
     <div>
-        <label>Project Photo</label>
-        <input
+        <label className='form-label'>Project Photo: </label>
+        <input className='form-input'
             type='text'
             placeholder='Add an image URL '
             onChange={handleChange}
         />
     </div>
 
-
-    <button type='submit' onClick={handleSubmit}> Create New Project</button>
+    <button className='form-button' type='submit' onClick={handleSubmit}> Create New Project</button>
     </form>
     )
 }

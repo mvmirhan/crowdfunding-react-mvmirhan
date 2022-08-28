@@ -1,15 +1,33 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './nav.css'
 
-function Nav() {
+const Nav = () => {
+    const location = useLocation()
+    const [loggedIn, setLoggedIn] = useState(!!window.localStorage.getItem('token'));
+    const logOut = () => {
+        window.localStorage.removeItem("token");
+            setLoggedIn(false)
+    }
+
+
+    React.useEffect(() => {
+        setLoggedIn(!!window.localStorage.getItem('token'))
+    }, [window.localStorage, location]
+    )
+    
     return (
         <nav id='navbar'>
-            <Link to="/">  Home  </Link>
-            <Link to="/createproject"> Create Project </Link>
-            <Link to="/login"> Login </Link>
+                <Link to="/">Home</Link>
+                {loggedIn ? (
+                <Link to = "/" onClick={logOut}>Logout</Link>) 
+                :(<Link to = "/login">Login</Link>)}
+                {loggedIn ? (
+                <Link to = "/createproject">Create Project</Link>) 
+                :null}
         </nav>
-    )
+    );
 }
 
-export default Nav
+
+export default Nav;

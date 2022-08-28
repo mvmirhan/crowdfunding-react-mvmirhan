@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { allProjects } from '../data'
+import { useParams } from 'react-router-dom'
 import ProjectCard from '../ProjectCard/ProjectCard'
-import image from '../images/logo-musikantro.png'
 
 
 function HomePage() {
@@ -13,10 +12,10 @@ function HomePage() {
         .then((results) => {
             return results.json()
         })
-        .then((data) => {
-            setProjectList(data)
+        .then((projectList) => {
+            setProjectList(projectList)
         })
-        setProjectList(allProjects)
+        setProjectList(projectList)
     }, [])
 
     return (
@@ -26,9 +25,7 @@ function HomePage() {
             }
             )}
         </div>
-
         )
-
 }
 
 export default HomePage
