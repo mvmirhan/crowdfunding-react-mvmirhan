@@ -78,6 +78,15 @@ function ProjectForm() {
         />
     </div>
 
+    <div>
+        <label className='form-label'>Date Created: </label>
+        <input className='form-input'
+            type='datetime-local'
+            placeholder='Select Date Time '
+            onChange={handleChange}
+        />
+    </div>
+
     <button className='form-button' type='submit' onClick={handleSubmit}> Create New Project</button>
     </form>
     )
