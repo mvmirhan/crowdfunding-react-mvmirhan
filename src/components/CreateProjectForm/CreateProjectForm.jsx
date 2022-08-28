@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import '../style/form-fields.css'
 
-function ProjectForm() {
+function CreateProjectForm() {
     const [data, inputData] = useState({
         title: "",
         description: "",
@@ -13,12 +13,12 @@ function ProjectForm() {
         date_created: ""       
     })
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        inputData((prevData) => ({
-            ...prevData,[id]: value,
-        }))
-    }
+    // const handleChange = (e) => {
+    //     const { id, value } = e.target;
+    //     inputData((prevData) => ({
+    //         ...prevData,[id]: value,
+    //     }))
+    // }
 
     const postData = async () => {
         const response = await
@@ -32,13 +32,14 @@ function ProjectForm() {
 
     const history = useNavigate()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        {postData().then((response) => {
-                window.localStorage.setItem("token", response.token)
-                history("/")
-            })}
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault(); {
+    //         postData().then((response) => {
+    //             window.localStorage.setItem("token", response.token)
+    //             history("/")
+    //         })}
+    // }
+
 
     return (    
     <form className='form-style'>
@@ -47,7 +48,7 @@ function ProjectForm() {
         <input className='form-input'
             type='text'
             placeholder='Add a project name'
-            onChange={handleChange}
+            // onChange={handleChange}
         />
     </div>
 
@@ -56,7 +57,7 @@ function ProjectForm() {
         <input id='form-inpur-desc'
             type='text'
             placeholder='Add project description'
-            onChange={handleChange}
+            // onChange={handleChange}
         />
     </div>
 
@@ -65,7 +66,7 @@ function ProjectForm() {
         <input className='form-input'
             type='text'
             placeholder='Add a goal'
-            onChange={handleChange}
+            // onChange={handleChange}
         />
     </div>
 
@@ -73,8 +74,17 @@ function ProjectForm() {
         <label className='form-label'>Project Photo: </label>
         <input className='form-input'
             type='text'
-            placeholder='Add an image URL '
-            onChange={handleChange}
+            placeholder='Add an image URL'
+            // onChange={handleChange}
+        />
+    </div>
+
+    <div>
+        <label className='form-label'>Project Status: </label>
+        <input className='form-input'
+            type='text'
+            placeholder='Type True'
+            // onChange={handleChange}
         />
     </div>
 
@@ -82,14 +92,14 @@ function ProjectForm() {
         <label className='form-label'>Date Created: </label>
         <input className='form-input'
             type='datetime-local'
-            placeholder='Select Date Time '
-            onChange={handleChange}
+            // placeholder='Select Date Time '
+            // onChange={handleChange}
         />
     </div>
 
-    <button className='form-button' type='submit' onClick={handleSubmit}> Create New Project</button>
+    <button className='form-button' type='submit' onClick={postData}> Create New Project</button>
     </form>
     )
 }
 
-export default ProjectForm
+export default CreateProjectForm
