@@ -1,0 +1,38 @@
+.form {
+    background-color: #fdd876;
+    border-radius: 5px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form-body{
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.form_label {
+    width: 70%;
+}
+
+.form_input {
+    display: grid;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* .form_input_desc {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} */
+
+.btn {
+    align-content: center;
+    height: 50px;
+    width: 50%;
+}

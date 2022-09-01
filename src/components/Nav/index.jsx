@@ -19,11 +19,14 @@ const Nav = () => {
     return (
         <nav id='navbar'>
                 <Link to="/">Home</Link>
+                <Link to="/users/">Create Account</Link>
+
                 {loggedIn ? (
                 <Link to = "/" onClick={logOut}>Logout</Link>) 
                 :(<Link to = "/login">Login</Link>)}
+
                 {loggedIn ? (
-                <Link to = "/createproject">Create Project</Link>) 
+                <Link to = "/projects/">Create Project</Link>) 
                 :null}
         </nav>
     );

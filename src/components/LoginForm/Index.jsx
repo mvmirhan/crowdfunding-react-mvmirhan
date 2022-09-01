@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import '../style/form-fields.css'
+import './LoginForm.css'
 
 function LoginForm() {
     const [credentials, setCredentials] = useState({
@@ -38,10 +37,10 @@ function LoginForm() {
     }
     
     return (
-    <form className='form-style'>
+    <form className='form'>
             <div>
-                <label className='form-label' htmlFor='username'>Username:</label>
-                <input className='form-input'
+                <label className='form_label' htmlFor='username'>Username:</label>
+                <input className='form_input'
                     type='text'
                     id='username'
                     placeholder='Enter username'
@@ -50,15 +49,15 @@ function LoginForm() {
             </div>
 
             <div>
-            <label className='form-label' htmlFor='password'>Password:</label>
-            <input className='form-input'
+            <label className='form_label' htmlFor='password'>Password:</label>
+            <input className='form_input'
                 type='password'
                 id='password'
                 placeholder='Enter password'
                 onChange={handleChange} 
             />
             </div>
-            <button className='form-button' type='submit' onClick={handleSubmit}>Login</button>
+            <button className='btn' type='submit' onClick={handleSubmit}>Login</button>
     </form>
 )
 }
