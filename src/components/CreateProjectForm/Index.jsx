@@ -35,7 +35,7 @@ function CreateProjectForm() {
     const handleSubmit = (e) => {
         e.preventDefault(); {
             postData().then((response) => {
-                window.localStorage.setItem("token", response.token)
+                // window.localStorage.setItem("token", response.token)
                 history("/")
             })}
     }
