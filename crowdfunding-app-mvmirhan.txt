@@ -1,0 +1,23 @@
+Hi Lachie,
+
+Thanks for all your patience while teaching us the Javascript and React.
+I'm hoping that I'll get better as I keep using these new skill sets while working
+on our final project for SheCodes.
+
+Just a heads-up that the assignment I'll be uploading tonight still requires a lot of work.
+I intend to update this prior the ShowCase.
+
+Below are the links to my GitHub Repo and the deployed app.
+
+Link to GitHub Repo
+
+https://github.com/mvmirhan/crowdfunding-react-mvmirhan
+
+Link to deployed Heroku App
+
+https://musikantro.herokuapp.com/
+
+Regards,
+Marivic
+
+
