@@ -1,0 +1,30 @@
+.form {
+    background-color: #fdd876;
+    border-radius: 5px;
+    width: 40%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form-body{
+    justify-content: center;
+    padding: 20px 10px;
+}
+.form_label {
+    width: 60%;
+}
+
+.form_input {
+    display: grid;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.btn {
+    align-content: center;
+    height: 50px;
+    width: 50%;
+}

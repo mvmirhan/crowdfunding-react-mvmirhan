@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Nav from './components/Nav'
 import HomePage from './pages/HomePage'
+import CreateUserPage from './pages/CreateUserPage'
 import ProjectPage from './pages/ProjectPage'
 import LoginPage from './pages/LoginPage'
 import CreateProjectPage from './pages/CreateProjectPage'
@@ -26,8 +27,9 @@ function App() {
       
         <Routes>
           <Route path="/login" element={<LoginPage/>}></Route>
-          <Route path="/createproject" element={<CreateProjectPage/>}></Route>
+          <Route path="/projects/" element={<CreateProjectPage/>}></Route>
           <Route exact path="/" element={<HomePage/>}></Route>
+          <Route path="/users/" element={<CreateUserPage/>}></Route>
           <Route path="/project/:id" element={<ProjectPage/>}></Route>
           
         </Routes>
