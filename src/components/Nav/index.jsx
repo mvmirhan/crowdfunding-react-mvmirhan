@@ -18,15 +18,15 @@ const Nav = () => {
     
     return (
         <nav id='navbar'>
-                <Link to="/">Home</Link>
-                <Link to="/users/">Create Account</Link>
+                <Link  className='a-nav' to="/">Home</Link>
+                <Link  className='a-nav' to="/users/">Create Account</Link>
 
                 {loggedIn ? (
-                <Link to = "/" onClick={logOut}>Logout</Link>) 
-                :(<Link to = "/login">Login</Link>)}
+                <Link  className='a-nav' to = "/" onClick={logOut}>Logout</Link>) 
+                :(<Link  className='a-nav' to = "/login">Login</Link>)}
 
                 {loggedIn ? (
-                <Link to = "/projects/">Create Project</Link>) 
+                <Link className='a-nav'  to = "/projects/">Create Project</Link>) 
                 :null}
         </nav>
     );

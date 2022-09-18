@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import '../ProjectCard/ProjectCard.css'
 
 function ProjectPage() {
@@ -21,9 +21,10 @@ function ProjectPage() {
             <img src={projectData.image} alt='project'/>
             <h2>{projectData.title}</h2>
             <p>{projectData.description}</p>
-            <h4>Created at: {projectData.date_created}</h4>
-            <h4>{`Status: ${projectData.is_open}`}</h4>
-            <h3>Pledges: </h3>
+            <p>Created at: {projectData.date_created}</p>
+            <p>{`Status: ${projectData.is_open}`}</p>
+            <Link className='a-pledge' to="/pledges" >I want to pledge</Link>
+            <h4>Pledges: </h4>
             <ul>
                 {projectData.pledges.map((pledgeData, key) => {
                     return (
