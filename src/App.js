@@ -6,6 +6,7 @@ import CreateUserPage from './pages/CreateUserPage'
 import ProjectPage from './pages/ProjectPage'
 import LoginPage from './pages/LoginPage'
 import CreateProjectPage from './pages/CreateProjectPage'
+import AddPledgePage from './pages/AddPledgePage'
 import image from './logo-musikantro.png'
 
 
@@ -31,6 +32,8 @@ function App() {
           <Route exact path="/" element={<HomePage/>}></Route>
           <Route path="/users/" element={<CreateUserPage/>}></Route>
           <Route path="/project/:id" element={<ProjectPage/>}></Route>
+          <Route path="/pledges/" element={<AddPledgePage/>}></Route>
+
           
         </Routes>
       </Router>

@@ -14,6 +14,22 @@ a {
     color: black;
 }
 
+.a-pledge {
+  margin: 0px;
+  align-items: flex-start;
+  text-decoration:underline;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.a-nav {
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+;
+}
+
 
 
 
