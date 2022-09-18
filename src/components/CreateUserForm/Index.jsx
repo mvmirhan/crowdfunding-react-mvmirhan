@@ -12,12 +12,24 @@ function CreateUserForm() {
 
     const [formData, setFormData] = useState(initialState)
 
+    const navigate = useNavigate()
+
     const handleChange = (e) => {
+        e.preventDefault();
+
         const newState = {
             ...formData,
-            [e.target.name]: <e className="target value"></e>
+            [e.target.name]: e.target.value
         }
         setFormData(newState)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        postData().then((response) => {
+            navigate("/login");
+            })       
     }
 
     const postData = async () => {
@@ -27,37 +39,28 @@ function CreateUserForm() {
                 headers: {"Content-type": "application/json",},
                 body: JSON.stringify(formData),
             })
+            console.log(formData)
             return response.json()
     }
 
-    const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); {
-            postData().then((response) => {
-                navigate("/");
-            })}
-    }
 
     return (        
         <div className='form'>
              <div className='form-body'>
             <div>
                 <label className='form_label' htmlFor='username'>Username</label>
-                <input className='form_input' type='text' placeholder='Username'
-                onChange={handleChange}/>
+                <input className='form_input' name='username' type='text' placeholder='Username' onChange={handleChange}/>
             </div>
 
             <div>
             <label className='form_label' htmlFor='email'>Email</label>
-            <input className='form_input' type='text' placeholder='Email'
-            onChange={handleChange}/>
+            <input className='form_input' name='email' type='email' placeholder='Email' onChange={handleChange}/>
             </div>
 
             <div>
             <label className='form_label' htmlFor='password'>Password</label>
-            <input className='form_input' type='text' placeholder='Password'
-            onChange={handleChange}/>
+            <input className='form_input' name='password' type='password' placeholder='Password' onChange={handleChange}/>
             </div>
 
             <div>
