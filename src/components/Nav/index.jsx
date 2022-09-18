@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-// import { Link, useLocation } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './nav.css'
 
 const Nav = () => {
-    // const location = useLocation()
+    const location = useLocation()
     const [loggedIn, setLoggedIn] = useState(!!window.localStorage.getItem('token'));
     const logOut = () => {
         window.localStorage.removeItem("token");
             setLoggedIn(false)
     }
 
-    // React.useEffect(() => {
-    //     setLoggedIn(!!window.localStorage.getItem('token'))
-    // }, [window.localStorage, location]
-    // )
+    React.useEffect(() => {
+        setLoggedIn(!!window.localStorage.getItem('token'))
+    }, [window.localStorage, location]
+    )
     
     return (
         <nav id='navbar'>

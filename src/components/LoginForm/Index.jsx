@@ -38,6 +38,7 @@ const LoginForm = ({setLoggedInUser}) => {
             postData().then((data) => {
             console.log(data)
                 window.localStorage.setItem("token", data.token,)
+                // setLoggedInUser({id: data.id})
                 navigate("/")
             })}
     }
